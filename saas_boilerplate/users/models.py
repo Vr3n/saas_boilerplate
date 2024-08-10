@@ -1,6 +1,8 @@
 
 from typing import ClassVar
 
+from django.db import models
+
 from django.contrib.auth.models import AbstractUser
 from django.db.models import CharField
 from django.db.models import EmailField
@@ -23,6 +25,10 @@ class User(AbstractUser):
     last_name = None  # type: ignore[assignment]
     email = EmailField(_("email address"), unique=True)
     username = None  # type: ignore[assignment]
+    selected_org = models.ForeignKey('organisations.Organisation',
+                                     on_delete=models.SET_NULL,
+                                     null=True,
+                                     blank=True)
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []

@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for org in orgs %}
+<h2>{{ org.name }}</h2>
+<p>{{ org.description}}</p>
+{% endfor  %}
+{% endblock content %}

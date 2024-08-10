@@ -1,4 +1,4 @@
--r production.txt
+-r base.txt
 
 Werkzeug[watchdog]==3.0.3 # https://github.com/pallets/werkzeug
 ipdb==0.13.13  # https://github.com/gotcha/ipdb
@@ -32,3 +32,4 @@ django-debug-toolbar==4.4.6  # https://github.com/jazzband/django-debug-toolbar
 django-extensions==3.2.3  # https://github.com/django-extensions/django-extensions
 django-coverage-plugin==3.1.0  # https://github.com/nedbat/django_coverage_plugin
 pytest-django==4.8.0  # https://github.com/pytest-dev/pytest-django
+
