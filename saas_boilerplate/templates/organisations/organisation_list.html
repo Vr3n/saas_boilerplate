@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<a href="{% url 'organisations:create' %}" class="btn btn-primary">
+  Create new Organisation
+</a>
 {% for org in orgs %}
 <h2>{{ org.name }}</h2>
 <p>{{ org.description}}</p>

@@ -1,7 +1,7 @@
 from django import forms
 from django.utils.translation import gettext_lazy as _
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Column, Div, Layout, Row, Submit
+from crispy_forms.layout import Column, Layout, Row, Submit
 
 from saas_boilerplate.organisations.models import Organisation
 
@@ -17,8 +17,8 @@ class OrganisationForm(forms.ModelForm):
         model = Organisation
         fields = [
             'name',
+            'logo',
             'description',
-            'logo'
         ]
 
     def __init__(self, *args, **kwargs):
@@ -27,8 +27,8 @@ class OrganisationForm(forms.ModelForm):
         self.helper = FormHelper()
         self.helper.layout = Layout(
             Row(
-                Column("logo", css_class="form-group col-md-6 mb-0"),
-                Column("name", css_class="form-group col-md-6 mb-0"),
+                Column("name", css_class="form-group col-sm-6 mb-0"),
+                Column("logo", css_class="form-group col-sm-6 mb-0"),
             ),
             Row(
                 Column("description", css_class="form-group col-md-12 mb-0"),
